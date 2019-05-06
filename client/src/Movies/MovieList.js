@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Movie from "./Movie";
+import MovieCard from "./MovieCard";
 import axios from "axios";
 
 export default class MovieList extends Component {
@@ -13,12 +13,12 @@ export default class MovieList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
 
